@@ -1,0 +1,73 @@
+{% include "navbar.html" %}
+{% block amazeshow %}
+<style>
+    body{
+        background-color: rgb(19, 37, 37);
+    }
+    .margin{
+        margin:50px;
+    }
+    #card{
+        width:315px;
+    }
+    #card1{
+        flex-direction: row;
+        margin-bottom: 120px;
+        overflow-x: auto;
+        margin-left: 0px;
+        background:linear-gradient(rgb(41, 41, 41),rgb(22, 22, 22));
+    }
+    #card1::-webkit-scrollbar{
+        display: none;
+    }
+    #card2{
+        color:aliceblue;
+        background:linear-gradient(rgb(23, 23, 23),rgb(41, 41, 41));  
+    }  
+    #youtube{
+        width:200px;
+        height:50px;
+        background-color:aqua;
+    }
+    .tvposter:hover{
+        
+        transform:scale(1.05);
+        transition-duration: 0.2s;
+    }
+    
+    
+
+</style>
+<div class="margin">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body" id="card1">
+                {% for i in details %}
+                    <div class="col-sm-2" id="card">
+                        <div class="card card-body" id="card2">
+                            <img src="{{i.poster.url}}" class="tvposter" alt="no image" height="400px" width="280px"><br>
+                            <p>Name : {{i.name}}</p>
+                            <p>{{i.details}}</p>
+                            <p>Budget : est. ₹{{i.budget}} crore</p>
+                            <p>rating : {{i.rating}}/10</p>
+                            <div class="card1">
+                                <a href="{{i.trailer}}">
+                                    <div class="box2">
+                                        <p><i class="fa-brands fa-youtube fa-xl" style="color: #ff0000;"></i> Watch trailer</p>
+                                    </div> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>        
+                {% endfor %}
+                
+            </div>
+        </div>      
+    </div>
+</div>
+
+    
+
+
+{% endblock  %}
+{% include 'footer.html' %}

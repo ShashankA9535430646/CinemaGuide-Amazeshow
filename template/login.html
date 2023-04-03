@@ -1,0 +1,63 @@
+{% include "navbar.html" %}
+
+{% block amazeshow %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+    .loginh1 h1{
+        text-align: center;
+        margin-top:100px;
+    }
+    .login{
+        align-items: center;
+    }
+    .login form{
+        height:350px;
+        padding:50px 5px;
+        text-align: center;
+        box-sizing: border-box;
+        border:1px solid white;
+        box-shadow: 2px 2px 10px rgb(103, 102, 102);
+        margin:8% 33%;
+        border-radius: 8px;  
+    }
+    .login input{
+        margin-left: 12px;
+        border:1px solid rgb(3, 164, 164);
+        outline: 1px solid white;
+        border-radius: 2px;
+    }
+    .login label{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .btn.btn-success{
+        width:290px;
+    }
+    .login form h2{
+        margin-bottom: 50px;
+    }
+</style>
+<div class="container">
+    <div class="jumbotron">
+        <div class="loginh1">
+            <h1>Login</h1>
+        </div>
+        <div class="login">
+
+            <form action="" method =POST >
+                <h2>log in to your account</h2>
+                {% csrf_token %}
+                <label for="name">Username : </label>
+                <input type="text" name="name" placeholder="Enter your name" id=""><br><br>
+                <label for="password">Password : </label>
+                <input type="password" name="password" placeholder="Enter your password" id=""><br><br>
+                <button type="submit" class="btn btn-success" >Login</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock  %}
+

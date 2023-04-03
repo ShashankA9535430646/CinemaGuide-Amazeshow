@@ -1,0 +1,83 @@
+{% include "navbar.html" %}
+
+{% block amazeshow %}
+<style>
+    body{
+        background-color: rgb(3, 45, 44);
+
+    }
+
+    body{
+        background-color: rgb(3, 45, 44);
+    }
+    .tvshows form{
+        border: 1px solid;
+        width:500px;
+        padding:50px 5px;
+        box-sizing: border-box;
+        margin:0% 39%;
+    }
+    .tvshows #id_name{
+        margin-left: 35px;
+
+    }
+    .tvshows #id_poster{
+        margin-left: 33px;
+        
+    }
+    .tvshows #id_details{
+        margin-left: 29px;
+    }.tvshows #id_budget{
+        margin-left: 25px;
+    }.tvshows #id_box_office{
+        margin-left: 3px;
+    }.tvshows #id_rating{
+        margin-left: 32px;
+    }.tvshows #id_trailer{
+        margin-left: 36px;
+    }.tvshows #id_name{
+        margin-left: 35px;
+    }
+    form{
+        padding:50px 5px;
+        box-sizing: border-box;
+        margin:0% 33%;
+    }
+    h1{
+        color:aliceblue;
+        text-align: center;
+        margin-top:5%;
+        margin-bottom: 2%;
+
+    }
+    label{
+        color:aliceblue;
+        font-size: larger;
+    }
+    input{
+        color:rgb(3, 45, 44);
+    }
+    
+</style>
+<div class="container">
+    <div class="jumbotron">
+        {% if show %}
+            <h1 align="center">data stored successfully</h1>
+        {% else %}
+            <h1>Add Tvshows</h1>
+            <div class="tvshows">
+
+                <form action="" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    
+                    <input type="submit" class="btn btn-info" value="Add">
+                    
+                </form>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock  %}
