@@ -29,7 +29,7 @@ def login(request):
             LOGIN(request,user)
             return HttpResponseRedirect(reverse('app:addmovies'))
         else:
-            return HttpResponse("<h1 style='color:blue;'>entered credentials are incorrect</h1>")
+            return HttpResponse("<h1 align='center' style='color:blue;margin-top:150px;'>entered credentials are incorrect </h1><p align='center'>or</p><h1 align='center'>Register first before logging in</h1> ")
     else:
         return render(request,"login.html")
         
